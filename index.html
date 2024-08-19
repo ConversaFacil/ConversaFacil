@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConversaFácil - Chatbot para Farmácias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Menu de Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#hero" class="logo">ConversaFácil</a>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">Como Funciona</a></li>
+                <li><a href="#testimonials">Depoimentos</a></li>
+                <li><a href="#cta">Demonstração</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Seção Hero -->
+    <header id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Transforme o Atendimento da Sua Farmácia com o Chatbot Inteligente da ConversaFácil</h1>
+            <p>Ofereça um atendimento rápido, eficiente e personalizado aos seus clientes com o nosso chatbot exclusivo para farmácias.</p>
+            <a href="#cta" class="cta-btn">Experimente Grátis</a>
+        </div>
+    </header>
+
+    <!-- Seção Como Funciona -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>Como o ConversaFácil Pode Ajudar Sua Farmácia</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <img src="images/icon-24-7.svg" alt="Atendimento 24/7">
+                    <h3>Atendimento 24/7</h3>
+                    <p>Esteja disponível para seus clientes a qualquer hora, mesmo fora do horário comercial.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="images/icon-automatic.svg" alt="Respostas Automáticas">
+                    <h3>Respostas Automáticas</h3>
+                    <p>Responda rapidamente a perguntas frequentes sobre medicamentos, preços, disponibilidade e mais.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="images/icon-schedule.svg" alt="Agendamento de Consultas">
+                    <h3>Agendamento de Consultas</h3>
+                    <p>Facilite o agendamento de consultas ou serviços diretamente pelo chatbot.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="images/icon-sales.svg" alt="Aumento nas Vendas">
+                    <h3>Aumento nas Vendas</h3>
+                    <p>Recomende produtos com base no histórico de compras e preferências do cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Depoimentos -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>O que Nossos Clientes Dizem</h2>
+            <div class="testimonial-item">
+                <p>"Desde que começamos a usar o ConversaFácil, nosso atendimento ao cliente melhorou drasticamente. Os clientes adoram a rapidez e a conveniência!"</p>
+                <span>Farmácia Vida Saudável</span>
+            </div>
+            <div class="testimonial-item">
+                <p>"Agora, podemos responder às perguntas dos nossos clientes mesmo quando estamos fechados, o que nos dá uma enorme vantagem."</p>
+                <span>Drogaria Saúde</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Chamada à Ação -->
+    <section id="cta" class="cta">
+        <div class="container">
+            <h2>Pronto para Levar Sua Farmácia para o Próximo Nível?</h2>
+            <p>Não perca mais tempo e comece agora a oferecer um atendimento automatizado de alta qualidade.</p>
+            <a href="#" class="cta-btn">Solicitar uma Demonstração</a>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <form action="#">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit" class="cta-btn">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Sobre Nós</a>
+                <a href="#">Contato</a>
+                <a href="#">Política de Privacidade</a>
+            </div>
+            <p>&copy; 2024 ConversaFácil - A solução de chatbot ideal para a sua farmácia.</p>
+        </div>
+    </footer>
+
+    <!-- Script para Scroll Suave -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
