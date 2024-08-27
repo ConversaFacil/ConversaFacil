@@ -107,14 +107,14 @@ body {
 }
 
 .how-it-works h2 {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-size: 2rem;
 }
 
 .features {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .feature-item {
@@ -127,8 +127,14 @@ body {
     transition: transform 0.3s;
 }
 
-.feature-item:hover {
+/* .feature-item:hover {
     transform: translateY(-10px);
+} */
+
+#feature-badge {
+    width: 23%;
+    border-radius: 50%;
+    margin-top: 2px;
 }
 
 .feature-item h3 {
@@ -138,11 +144,14 @@ body {
 
 .feature-item p {
     font-size: 1rem;
+    margin-top: -10px;
 }
 
 .feature-item img {
-    max-width: 60px;
-    margin-bottom: 15px;
+    max-width:50%;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    object-fit: cover
 }
 
 /* Estilos para a seção Depoimentos */
