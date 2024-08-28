@@ -1,145 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConversaFácil - Chatbot para Farmácias</title>
-    <link rel="shortcut icon" href="assets/logo.jpg" type="image/x-icon">
+    <title>Conversa Fácil</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+
+<body class="font-sans bg-gray-100 text-gray-800">
+
     <!-- Menu de Navegação -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#hero" class="logo">ConversaFácil</a>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#group">Quem somos</a></li>
-                <li><a href="#cta">Time</a></li>
-                <li><a href="#contact">Contato</a></li>
-                <li><a href="#products">Produtos</a></li>
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="#home" class="text-xl font-bold flex items-center">
+                <img src="assets/logo.png" alt="Logo" class="w-12 h-12 mr-2"> <!-- Aumentei o tamanho da logo -->
+                <span class="text-gray-800">Conversa Fácil</span>
+            </a>
+           
+            <ul class="flex space-x-4 font-semibold text-gray-800">
+                <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+                <li><a href="#group" class="hover:text-blue-500">Quem Somos</a></li>
+                <li><a href="#cta" class="hover:text-blue-500">Time</a></li>
+                <li><a href="#contact" class="hover:text-blue-500">Contato</a></li>
+                <li><a href="#products" class="hover:text-blue-500">Produtos</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Seção Hero -->
-    <header id="hero" class="hero">
-        <div class="hero-content">
-            <h1>Transforme o Atendimento da Sua Farmácia com o Chatbot Inteligente da ConversaFácil</h1>
-            <p>Ofereça um atendimento rápido, eficiente e personalizado aos seus clientes com o nosso chatbot exclusivo para farmácias.</p>
-            <a href="#cta" class="cta-btn">Experimente Grátis</a>
+    <header id="home" class="relative bg-cover bg-center" style="background-image: url('assets/farmacia.webp');">
+        <div class="container mx-auto px-6 py-20 text-center">
+            <h1 class="text-4xl font-bold text-white sm:text-5xl bg-cyan-500 inline-block p-4">Transforme a comunicação da sua farmácia com nosso chatbot</h1>
+            <p class="mt-6 text-lg font-semibold text-black">Nosso chatbot é especializado em farmácias e vai melhorar o atendimento ao cliente, aumentar o engajamento e otimizar o seu trabalho.</p>
+            <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank" class="mt-8 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">ENTRE EM CONTATO CONOSCO</a>
         </div>
     </header>
+    
 
-    <!-- Seção Como Funciona -->
-    <section id="group" class="how-it-works">
-        <div class="container">
-            <h2>Quem somos?</h2>
-            <div class="features">
-                <div class="feature-item">
-                    <img src="assets/pfp-brunno.png" alt="img-profile-brunno-castro" >
-                    <h3> Brunno Castro</h3>
-                    <p>- CEO - ConversaFácil</p>
-                    <a href="https://www.linkedin.com/in/brunno-castro-b4742737/" target="_blank"><img id="feature-badge" src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" alt=""></a>
+    <!-- Seção Quem Somos -->
+    <section id="group" class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-blue-500">Quem Somos</h2>
+            <p class="mt-4 text-lg font-semibold">Nós somos a ConversaFácil, uma empresa dedicada a fornecer soluções de chatbot para farmácias. Nosso objetivo é simplificar e melhorar a comunicação com seus clientes.</p>
+            <div class="mt-12 grid md:grid-cols-2 gap-8">
+                <div class="p-6 bg-blue-500 text-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-bold">Nossa Missão</h3>
+                    <p class="mt-2 font-semibold">Facilitar o atendimento e a interação com os clientes de farmácias através de tecnologia de ponta e atendimento personalizado.</p>
                 </div>
-                <div class="feature-item">
-                    <img src="assets/pfp-daniele.jpg" alt="img-profile-daniele-barbosa">
-                    <h3>Daniele Barbosa</h3>
-                    <p>- CMO - ConversaFácil</p>
-                    <a href="https://www.linkedin.com/in/danielebds/" target="_blank"><img id="feature-badge"
-                            src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" alt=""></a>
-                </div>
-                <div class="feature-item">
-                    <img src="assets/pfp-henrique.png" alt="img-profile-henrique">
-                    <h3>Henrique Souza</h3>
-                    <p>- CPO - ConversaFácil</p>
-                    <a href="https://www.linkedin.com/in/henrisousa/" target="_blank"><img id="feature-badge"
-                            src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" alt=""></a>
-                </div>
-                <div class="feature-item">
-                    <img src="assets/pfp-joel.png" alt="img-profile-joel">
-                    <h3>Joel Maranhão</h3>
-                    <p>- CTO - ConversaFácil</p>
-                    <a href="https://www.linkedin.com/in/joel-maranh%C3%A3o-9806751b1/" target="_blank"><img id="feature-badge"
-                            src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" alt=""></a>
-                </div>
-                <div class="feature-item">
-                    <img src="assets/pfp-tiago.png" alt="img-profile-tiago">
-                    <h3>Tiago Rôxo</h3>
-                    <p>- COO - ConversaFácil</p>
-                    <a href="https://www.linkedin.com/in/tiago-roxoo/" target="_blank"><img id="feature-badge"
-                            src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" alt=""></a>
+                <div class="p-6 bg-blue-500 text-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-bold">Nossos Valores</h3>
+                    <p class="mt-2 font-semibold">Compromisso com a qualidade, inovação e excelência no atendimento ao cliente são os nossos principais valores.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção Depoimentos -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>O que Nossos Clientes Dizem</h2>
-            <div class="testimonial-item">
-                <p>"Desde que começamos a usar o ConversaFácil, nosso atendimento ao cliente melhorou drasticamente. Os clientes adoram a rapidez e a conveniência!"</p>
-                <span>Farmácia Vida Saudável</span>
-            </div>
-            <div class="testimonial-item">
-                <p>"Agora, podemos responder às perguntas dos nossos clientes mesmo quando estamos fechados, o que nos dá uma enorme vantagem."</p>
-                <span>Drogaria Saúde</span>
+    <!-- Seção Time -->
+    <section id="cta" class="py-16 bg-blue-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-blue-500">Conheça Nosso Time</h2>
+            <p class="mt-4 text-lg font-semibold text-black">Estamos aqui para ajudar você a alcançar seus objetivos com nossa expertise e paixão por tecnologia.</p>
+            <div class="mt-12 grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:bg-blue-500 transition-all">
+                    <h3 class="text-xl font-semibold">Joel Maranhão - CTO</h3> <!-- Adicionei o cargo -->
+                    <p class="mt-2 text-gray-600">Responsável pela estratégia tecnológica e pela supervisão do desenvolvimento de sistemas inovadores que impulsionam a eficiência e a escalabilidade da empresa.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:bg-blue-500 transition-all">
+                    <h3 class="text-xl font-semibold">Daniele Barbosa - CMO</h3> <!-- Adicionei o cargo -->
+                    <p class="mt-2 text-gray-600">Lidera as estratégias de marketing e comunicação, focando em expandir a marca e engajar o público através de campanhas criativas e eficazes.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:bg-blue-500 transition-all">
+                    <h3 class="text-xl font-semibold">Thiago Roxo - COO</h3> <!-- Adicionei o cargo -->
+                    <p class="mt-2 text-gray-600">Gerencia as operações diárias da empresa, garantindo que todas as áreas funcionem de forma eficiente e alinhadas aos objetivos estratégicos.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:bg-blue-500 transition-all">
+                    <h3 class="text-xl font-semibold">Henrique Souza - CPO</h3> <!-- Adicionei o cargo -->
+                    <p class="mt-2 text-gray-600">Supervisiona o desenvolvimento e a inovação dos produtos, assegurando que atendam às necessidades dos clientes e ao mercado em constante evolução.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:bg-blue-500 transition-all">
+                    <h3 class="text-xl font-semibold">Bruno Hemannoel - CEO</h3> <!-- Adicionei o cargo -->
+                    <p class="mt-2 text-gray-600">Conduz a visão e a direção estratégica da empresa, liderando a equipe para alcançar metas ambiciosas e expandir a presença no mercado.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção Chamada à Ação -->
-    <section id="cta" class="cta">
-        <div class="container">
-            <h2>Pronto para Levar Sua Farmácia para o Próximo Nível?</h2>
-            <p>Não perca mais tempo e comece agora a oferecer um atendimento automatizado de alta qualidade.</p>
-            <a href="#" class="cta-btn">Solicitar uma Demonstração</a>
+    <!-- Seção Contato -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-stretch">
+            <div class="md:w-1/2 w-full flex">
+                <img src="assets/contato.png" alt="Imagem de Contato" class="w-full h-full object-cover rounded-lg shadow-lg">
+            </div>
+            <div class="md:w-1/2 w-full flex">
+                <div class="flex flex-col justify-center bg-blue-100 p-8 rounded-lg shadow-lg w-full">
+                    <h2 class="text-3xl font-bold text-blue-500 text-center">Entre em Contato</h2>
+                    <p class="mt-4 text-lg font-semibold text-black text-center">Estamos aqui para ajudar você com qualquer dúvida ou consulta. Entre em contato e vamos conversar!</p>
+                    <form class="mt-8 w-full">
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                <label for="name" class="block text-left uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Nome</label>
+                                <input id="name" name="name" type="text" placeholder="Seu nome" class="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required>
+                            </div>
+                            <div class="w-full md:w-1/2 px-3">
+                                <label for="email" class="block text-left uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">E-mail</label>
+                                <input id="email" name="email" type="email" placeholder="Seu e-mail" class="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-left uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Mensagem</label>
+                            <textarea id="message" name="message" placeholder="Sua mensagem" class="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-32 resize-none" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 focus:outline-none focus:shadow-outline">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
+    
+    
+    
+    
+    
+    
 
-    <!-- Seção de Contato -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            <form action="#">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit" class="cta-btn">Enviar</button>
-            </form>
+    <!-- Seção Produtos -->
+    <section id="products" class="py-16 bg-blue-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-blue-500">Nossos Produtos</h2>
+            <p class="mt-4 text-lg font-semibold text-black">Escolha o plano que melhor se adapta às suas necessidades.</p>
+            <div class="mt-12 grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold">Plano Básico</h3>
+                    <p class="mt-2 font-semibold">R$ 15,90 / mês</p> <!-- Adicionei os preços -->
+                    <p class="mt-2 text-gray-600">Funcionalidades essenciais para pequenas farmácias.</p>
+                    <a href="https://api.whatsapp.com/send?phone=5581987708806"target="_blank" class="mt-4 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">Saiba mais</a>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold">Plano Avançado</h3>
+                    <p class="mt-2 font-semibold ">R$ 25,90 / mês</p> <!-- Adicionei os preços -->
+                    <p class="mt-2 text-gray-600">Soluções completas para farmácias de médio porte.</p>
+                    <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank" class="mt-4 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">Saiba mais</a>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-xl font-semibold">Plano Personalizado</h3>
+                    <p class="mt-2 font-semibold ">R$ 35,90 / mês</p> <!-- Adicionei os preços -->
+                    <p class="mt-2 text-gray-600">Soluções customizadas para grandes farmácias com necessidades específicas.</p>
+                    <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank" class="mt-4 inline-block bg-blue-500 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-600">Saiba mais</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="#">Sobre Nós</a>
-                <a href="#">Contato</a>
-                <a href="#">Política de Privacidade</a>
-            </div>
-            <p>&copy; 2024 ConversaFácil - A solução de chatbot ideal para a sua farmácia.</p>
+    <footer class="bg-blue-500 py-6">
+        <div class="container mx-auto px-6 text-center font-bold text-white">
+            <p>&copy; 2024 ConversaFácil. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- Script para Scroll Suave -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    
+      
 </body>
+
 </html>
