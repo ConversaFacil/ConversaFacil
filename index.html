@@ -4,16 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversa Fácil</title>
+    <title>Converasa Fácil</title>
     <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "hDTGUiUVIQTGVMx4o",
+            });
+        })();
+    </script>
 </head>
 
 <body class="font-sans bg-gray-100 text-gray-800">
 
     <!-- Menu de Navegação -->
-    <nav class="bg-white shadow-md">
+    <nav class="bg-white shadow-md fixed navbar">
         <div class="container mx-auto flex justify-between items-center p-4">
             <a href="#home" class="text-xl font-bold flex items-center">
                 <img src="assets/logo.png" alt="Logo" class="w-12 h-12 mr-2"> <!-- Aumentei o tamanho da logo -->
@@ -31,17 +42,22 @@
     </nav>
 
     <!-- Seção Hero -->
-    <header id="home" class="relative bg-cover bg-center" style="background-image: url('assets/farmacia.webp');">
+    <header id="home" class="relative bg-cover bg-center pt-32" style="background-image: url('assets/farmacia.webp');">
         <div class="container mx-auto px-6 py-20 text-center">
-            <h1 class="text-4xl font-bold text-white sm:text-5xl bg-cyan-500 inline-block p-4">Transforme a comunicação da sua farmácia com nosso chatbot</h1>
-            <p class="mt-6 text-lg font-semibold text-black">Nosso chatbot é especializado em farmácias e vai melhorar o atendimento ao cliente, aumentar o engajamento e otimizar o seu trabalho.</p>
-            <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank" class="mt-8 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">ENTRE EM CONTATO CONOSCO</a>
+            <h1 class="text-4xl font-bold text-white sm:text-5xl bg-cyan-500 inline-block p-4">Transforme a comunicação da
+                sua farmácia com nosso chatbot</h1>
+            <p class="mt-6 text-lg font-semibold text-black">Nosso chatbot é especializado em farmácias e vai melhorar o
+                atendimento ao cliente, aumentar o engajamento e otimizar o seu trabalho.</p>
+            <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank"
+                class="mt-8 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">ENTRE EM
+                CONTATO CONOSCO</a>
         </div>
     </header>
+
     
 
     <!-- Seção Quem Somos -->
-    <section id="group" class="py-16 bg-white">
+    <section id="group" class="py-16 bg-white pt-20">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold text-blue-500">Quem Somos</h2>
             <p class="mt-4 text-lg font-semibold">Nós somos a ConversaFácil, uma empresa dedicada a fornecer soluções de chatbot para farmácias. Nosso objetivo é simplificar e melhorar a comunicação com seus clientes.</p>
@@ -59,7 +75,7 @@
     </section>
 
     <!-- Seção Time -->
-    <section id="cta" class="py-16 bg-blue-100">
+    <section id="cta" class="py-16 bg-blue-100 pt-20">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold text-blue-500">Conheça Nosso Time</h2>
             <p class="mt-4 text-lg font-semibold text-black">Estamos aqui para ajudar você a alcançar seus objetivos com nossa expertise e paixão por tecnologia.</p>
@@ -114,7 +130,7 @@
                             <textarea id="message" name="message" placeholder="Sua mensagem" class="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-32 resize-none" required></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 focus:outline-none focus:shadow-outline">Enviar</button>
+                            <button type="submit" class="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 focus:outline-none focus:shadow-outline" onclick="SendMail(event)">Enviar</button>
                         </div>
                     </form>
                 </div>
@@ -123,13 +139,13 @@
     </section>
     
     
-    
+    <!-- Notificaões do toast -->
     
     
     
 
     <!-- Seção Produtos -->
-    <section id="products" class="py-16 bg-blue-100">
+    <section id="products" class="py-16 bg-blue-100 pt-20">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold text-blue-500">Nossos Produtos</h2>
             <p class="mt-4 text-lg font-semibold text-black">Escolha o plano que melhor se adapta às suas necessidades.</p>
