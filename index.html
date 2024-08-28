@@ -42,19 +42,22 @@
     </nav>
 
     <!-- Seção Hero -->
-    <header id="home" class="relative bg-cover bg-center pt-32" style="background-image: url('assets/farmacia.webp');">
-        <div class="container mx-auto px-6 py-20 text-center">
-            <h1 class="text-4xl font-bold text-white sm:text-5xl bg-cyan-500 inline-block p-4">Transforme a comunicação da
-                sua farmácia com nosso chatbot</h1>
-            <p class="mt-6 text-lg font-semibold text-black">Nosso chatbot é especializado em farmácias e vai melhorar o
-                atendimento ao cliente, aumentar o engajamento e otimizar o seu trabalho.</p>
-            <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank"
-                class="mt-8 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">ENTRE EM
-                CONTATO CONOSCO</a>
-        </div>
-    </header>
-
-    
+<header id="home" class="relative bg-cover bg-center pt-32 md:pt-40"
+    style="background-image: url('assets/farmacia.webp');">
+    <div class="container mx-auto px-6 py-20 text-center">
+        <h1 class="text-3xl font-bold text-white bg-cyan-500 inline-block p-4 md:text-4xl lg:text-5xl">
+            Transforme a comunicação da sua farmácia com nosso chatbot
+        </h1>
+        <p class="mt-6 text-base font-semibold text-black md:text-lg lg:text-xl">
+            Nosso chatbot é especializado em farmácias e vai melhorar o atendimento ao cliente, aumentar o engajamento e
+            otimizar o seu trabalho.
+        </p>
+        <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank"
+            class="mt-8 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">
+            ENTRE EM CONTATO CONOSCO
+        </a>
+    </div>
+</header>
 
     <!-- Seção Quem Somos -->
     <section id="group" class="py-16 bg-white pt-20">
@@ -165,55 +168,66 @@
         <p class="mt-4 text-lg font-semibold text-black">Escolha o plano que melhor se adapta às suas necessidades.</p>
         <div class="mt-12 grid md:grid-cols-3 gap-8">
             <!-- Plano Básico -->
-            <div class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
-                <h3 class="text-xl font-semibold">Plano Básico</h3>
-                <p class="mt-2 font-semibold">R$ 15,90 / mês</p>
-                <p class="mt-2 text-gray-600">Funcionalidades essenciais para pequenas farmácias.</p>
-                <ul class="mt-4 text-center text-gray-600">
-                    <li class="mt-2">Acesso a relatórios básicos</li>
-                    <li class="mt-2">Suporte via e-mail</li>
-                    <li class="mt-2">Gestão de estoque limitada</li>
-                </ul>
+            <div
+                class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform min-h-[400px] flex flex-col">
+                <div class="flex-grow">
+                    <h3 class="text-xl font-semibold">Plano Básico</h3>
+                    <p class="mt-2 font-semibold">R$ 15,90 / mês</p>
+                    <p class="mt-2 text-gray-600">Funcionalidades essenciais para pequenas farmácias.</p>
+                    <ul class="mt-4 text-center text-gray-600">
+                        <li class="mt-2 p-2 bg-gray-100 rounded">Acesso a relatórios básicos</li>
+                        <li class="mt-2 p-2 bg-gray-100 rounded">Suporte via e-mail</li>
+                        <li class="mt-2 p-2 bg-gray-100 rounded">Gestão de estoque limitada</li>
+                    </ul>
+                </div>
                 <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank"
-                    class="mt-4 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">Saiba
+                    class="mt-4 inline-block bg-blue-600 font-bold text-white px-6 w-32 py-3 rounded-lg hover:bg-blue-500 mx-auto">Saiba
                     mais</a>
             </div>
 
             <!-- Plano Avançado -->
-            <div class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
-                <h3 class="text-xl font-semibold">Plano Avançado</h3>
-                <p class="mt-2 font-semibold">R$ 25,90 / mês</p>
-                <p class="mt-2 text-gray-600">Soluções completas para farmácias de médio porte.</p>
-                <ul class="mt-4 text-center text-gray-600">
-                    <li class="mt-2">Acesso a relatórios avançados</li>
-                    <li class="mt-2">Suporte via chat e e-mail</li>
-                    <li class="mt-2">Gestão de estoque completa</li>
-                    <li class="mt-2">Integração com sistemas de pagamento</li>
-                </ul>
+            <div
+                class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform min-h-[400px] flex flex-col">
+                <div class="flex-grow">
+                    <h3 class="text-xl font-semibold">Plano Avançado</h3>
+                    <p class="mt-2 font-semibold">R$ 25,90 / mês</p>
+                    <p class="mt-2 text-gray-600">Soluções completas para farmácias de médio porte.</p>
+                    <ul class="mt-4 text-center text-gray-600">
+                        <li class="mt-2 p-2 bg-gray-100 rounded">Acesso a relatórios avançados</li>
+                        <li class="mt-2 p-2 bg-gray-100 rounded">Suporte via chat e e-mail</li>
+                        <li class="mt-2 p-2 bg-gray-100 rounded">Gestão de estoque completa</li>
+                        <li class="mt-2 p-2 bg-gray-100 rounded">Integração com sistemas de pagamento</li>
+                    </ul>
+                </div>
                 <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank"
-                    class="mt-4 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">Saiba
+                    class="mt-4 inline-block bg-blue-600 font-bold text-white w-32 px-6 py-3 rounded-lg hover:bg-blue-500 mx-auto">Saiba
                     mais</a>
             </div>
 
             <!-- Plano Personalizado -->
-            <div class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
-                <h3 class="text-xl font-semibold">Plano Personalizado</h3>
-                <p class="mt-2 font-semibold">R$ 35,90 / mês</p>
-                <p class="mt-2 text-gray-600">Soluções customizadas para grandes farmácias com necessidades específicas.
-                </p>
-                <ul class="mt-4 text-center text-gray-600">
-                    <li class="mt-2">Relatórios personalizados</li>
-                    <li class="mt-2">Suporte 24/7 dedicado</li>
-                    <li class="mt-2">Consultoria especializada</li>
-                    <li class="mt-2">Integração completa com sistemas ERP</li>
-                </ul>
+            <div
+                class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform min-h-[400px] flex flex-col">
+                <div class="flex-grow">
+                    <h3 class="text-xl font-semibold">Plano Personalizado</h3>
+                    <p class="mt-2 font-semibold">R$ 35,90 / mês</p>
+                    <p class="mt-2 text-gray-600">Soluções customizadas para grandes farmácias com necessidades
+                        específicas.</p>
+                    <ul class="mt-4 text-center text-gray-600">
+                        <li class="mt-2 p-2 bg-gray-100 rounded  mx-auto">Relatórios personalizados</li>
+                        <li class="mt-2 p-2 bg-gray-100 rounded  mx-auto">Suporte 24/7 dedicado</li>
+                        <li class="mt-2 p-2 bg-gray-100 rounded  mx-auto">Consultoria especializada</li>
+                        <li class="mt-2 p-2 bg-gray-100 rounded  mx-auto">Integração completa com sistemas ERP</li>
+                    </ul>
+                </div>
                 <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank"
-                    class="mt-4 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">Saiba
+                    class="mt-4 inline-block bg-blue-600 font-bold text-white px-6 w-32 py-3 rounded-lg hover:bg-blue-500 mx-auto">Saiba
                     mais</a>
             </div>
         </div>
     </div>
 </section>
+
+
 
 
 
