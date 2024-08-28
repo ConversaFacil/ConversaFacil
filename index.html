@@ -159,32 +159,64 @@
     
 
     <!-- Seção Produtos -->
-    <section id="products" class="py-16 bg-blue-100 pt-20">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-blue-500">Nossos Produtos</h2>
-            <p class="mt-4 text-lg font-semibold text-black">Escolha o plano que melhor se adapta às suas necessidades.</p>
-            <div class="mt-12 grid md:grid-cols-3 gap-8">
-                <div class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
-                    <h3 class="text-xl font-semibold">Plano Básico</h3>
-                    <p class="mt-2 font-semibold">R$ 15,90 / mês</p> <!-- Adicionei os preços -->
-                    <p class="mt-2 text-gray-600">Funcionalidades essenciais para pequenas farmácias.</p>
-                    <a href="https://api.whatsapp.com/send?phone=5581987708806"target="_blank" class="mt-4 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">Saiba mais</a>
-                </div>
-                <div class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
-                    <h3 class="text-xl font-semibold">Plano Avançado</h3>
-                    <p class="mt-2 font-semibold ">R$ 25,90 / mês</p> <!-- Adicionei os preços -->
-                    <p class="mt-2 text-gray-600">Soluções completas para farmácias de médio porte.</p>
-                    <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank" class="mt-4 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">Saiba mais</a>
-                </div>
-                <div class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
-                    <h3 class="text-xl font-semibold">Plano Personalizado</h3>
-                    <p class="mt-2 font-semibold ">R$ 35,90 / mês</p> <!-- Adicionei os preços -->
-                    <p class="mt-2 text-gray-600">Soluções customizadas para grandes farmácias com necessidades específicas.</p>
-                    <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank" class="mt-4 inline-block bg-blue-500 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-600">Saiba mais</a>
-                </div>
+<section id="products" class="py-16 bg-blue-100 pt-20">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-blue-500">Nossos Produtos</h2>
+        <p class="mt-4 text-lg font-semibold text-black">Escolha o plano que melhor se adapta às suas necessidades.</p>
+        <div class="mt-12 grid md:grid-cols-3 gap-8">
+            <!-- Plano Básico -->
+            <div class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                <h3 class="text-xl font-semibold">Plano Básico</h3>
+                <p class="mt-2 font-semibold">R$ 15,90 / mês</p>
+                <p class="mt-2 text-gray-600">Funcionalidades essenciais para pequenas farmácias.</p>
+                <ul class="mt-4 text-center text-gray-600">
+                    <li class="mt-2">Acesso a relatórios básicos</li>
+                    <li class="mt-2">Suporte via e-mail</li>
+                    <li class="mt-2">Gestão de estoque limitada</li>
+                </ul>
+                <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank"
+                    class="mt-4 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">Saiba
+                    mais</a>
+            </div>
+
+            <!-- Plano Avançado -->
+            <div class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                <h3 class="text-xl font-semibold">Plano Avançado</h3>
+                <p class="mt-2 font-semibold">R$ 25,90 / mês</p>
+                <p class="mt-2 text-gray-600">Soluções completas para farmácias de médio porte.</p>
+                <ul class="mt-4 text-center text-gray-600">
+                    <li class="mt-2">Acesso a relatórios avançados</li>
+                    <li class="mt-2">Suporte via chat e e-mail</li>
+                    <li class="mt-2">Gestão de estoque completa</li>
+                    <li class="mt-2">Integração com sistemas de pagamento</li>
+                </ul>
+                <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank"
+                    class="mt-4 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">Saiba
+                    mais</a>
+            </div>
+
+            <!-- Plano Personalizado -->
+            <div class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                <h3 class="text-xl font-semibold">Plano Personalizado</h3>
+                <p class="mt-2 font-semibold">R$ 35,90 / mês</p>
+                <p class="mt-2 text-gray-600">Soluções customizadas para grandes farmácias com necessidades específicas.
+                </p>
+                <ul class="mt-4 text-center text-gray-600">
+                    <li class="mt-2">Relatórios personalizados</li>
+                    <li class="mt-2">Suporte 24/7 dedicado</li>
+                    <li class="mt-2">Consultoria especializada</li>
+                    <li class="mt-2">Integração completa com sistemas ERP</li>
+                </ul>
+                <a href="https://api.whatsapp.com/send?phone=5581987708806" target="_blank"
+                    class="mt-4 inline-block bg-blue-600 font-bold text-white px-6 py-3 rounded-lg hover:bg-blue-500">Saiba
+                    mais</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+
 
     <!-- Rodapé -->
     <footer class="bg-blue-500 py-6">
