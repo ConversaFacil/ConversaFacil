@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversa Fácil</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("hDTGUiUVIQTGVMx4o");
+      })();
+    </script>
+     <style>
+        /* Estilo para os slides */
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-size: cover;
+          background-position: center;
+        }
+        .text-content {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          color: #fff;
+          background: rgba(0, 0, 0, 0.5); /* Sobreposição para legibilidade */
+          padding: 1rem;
+        }
+        .text-content h1 {
+          font-size: 3rem; /* Tamanho da fonte maior */
+          margin-bottom: 1.5rem;
+        }
+        .text-content a {
+          background-color: #1d4ed8;
+          color: white;
+          padding: 0.75rem 1.5rem;
+          border-radius: 0.5rem;
+          font-weight: bold;
+          text-decoration: none;
+        }
+        .text-content a:hover {
+          background-color: #2563eb;
+        }
+      </style>
+  </head>
+
+  <body class="font-sans bg-gray-100 text-gray-800">
+    <!-- Menu de Navegação -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <a href="#home" class="text-xl font-bold flex items-center">
+          <img
+            src="assets/logo.png"
+            alt="Logo"
+            class="w-10 h-10 sm:w-12 sm:h-12 mr-2"
+          />
+          <!-- Ajustei para ser responsivo -->
+          <span class="text-gray-800">Conversa Fácil</span>
+        </a>
+
+        <!-- Botão de menu para dispositivos móveis -->
+        <button
+          class="block md:hidden text-gray-800 focus:outline-none"
+          id="menu-toggle"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Menu de navegação -->
+        <ul
+          class="hidden md:flex space-x-4 font-semibold text-gray-800"
+          id="menu"
+        >
+          <li>
+            <a
+              href="#home"
+              class="nav-link hover:text-blue-500 hover:bg-blue-200 rounded-lg px-2 py-1"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#group"
+              class="nav-link hover:text-blue-500 hover:bg-blue-200 rounded-lg px-2 py-1"
+              >Quem Somos</a
+            >
+          </li>
+          <li>
+            <a
+              href="#products"
+              class="nav-link hover:text-blue-500 hover:bg-blue-200 rounded-lg px-2 py-1"
+              >Produtos</a
+            >
+          </li>
+          <li>
+            <a
+              href="#cta"
+              class="nav-link hover:text-blue-500 hover:bg-blue-200 rounded-lg px-2 py-1"
+              >Time</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="nav-link hover:text-blue-500 hover:bg-blue-200 rounded-lg px-2 py-1"
+              >Contato</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Menu para dispositivos móveis -->
+      <ul
+        class="md:hidden bg-white shadow-md rounded-lg mt-2 space-y-2 px-4 py-2 hidden"
+        id="mobile-menu"
+      >
+        <li>
+          <a
+            href="#home"
+            class="nav-link block hover:text-blue-500 hover:bg-blue-200 rounded-lg px-2 py-1"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#group"
+            class="nav-link block hover:text-blue-500 hover:bg-blue-200 rounded-lg px-2 py-1"
+            >Quem Somos</a
+          >
+        </li>
+        <li>
+          <a
+            href="#cta"
+            class="nav-link block hover:text-blue-500 hover:bg-blue-200 rounded-lg px-2 py-1"
+            >Produtos</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="nav-link block hover:text-blue-500 hover:bg-blue-200 rounded-lg px-2 py-1"
+            >Time</a
+          >
+        </li>
+        <li>
+          <a
+            href="#products"
+            class="nav-link block hover:text-blue-500 hover:bg-blue-200 rounded-lg px-2 py-1"
+            >Contato</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      document.querySelectorAll(".nav-link").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: "smooth",
+          });
+
+          if (!mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.add("hidden");
+          }
+        });
+      });
+    </script>
+
+    <!-- Seção Hero -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/carousel"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.querySelector('[data-carousel="slide"]');
+        if (carousel) {
+          // Inicialize o carrossel
+        }
+      });
+    </script>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seu Título</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+<body>
+   
+    <header id="home" class="relative overflow-hidden bg-cover bg-center h-screen">
+        <div class="swiper-container h-full">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide" style="background-image: url('assets/farmacia.webp');">
+              <div class="text-content">
+                <h1 class="text-4xl font-bold md:text-5xl lg:text-6xl">
+                  A chave para o sucesso é uma boa comunicação
+                </h1>
+                <a href="https://api.whatsapp.com/send?phone=558181820893" target="_blank">
+                  ENTRE EM CONTATO CONOSCO
+                </a>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide" style="background-image: url('assets/chatbot.png');">
+              <div class="text-content">
+                <h1 class="text-3xl font-bold md:text-4xl lg:text-5xl">
+                  Use chatbots para atendimento rápido e eficiente.
+                </h1>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide" style="background-image: url('assets/chat.png');">
+              <div class="text-content">
+                <h1 class="text-3xl font-bold md:text-4xl lg:text-5xl">
+                  Personalize as interações para refletir a identidade da sua marca.
+                </h1>
+              </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="swiper-slide" style="background-image: url('assets/grafico.png');">
+              <div class="text-content">
+                <h1 class="text-3xl font-bold md:text-4xl lg:text-5xl">
+                  Analise as conversas para entender o que os clientes realmente querem.
+                </h1>
+              </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="swiper-slide" style="background-image: url('assets/suporte.png');">
+              <div class="text-content">
+                <h1 class="text-3xl font-bold md:text-4xl lg:text-5xl">
+                  Ofereça suporte online para aumentar as vendas.
+                </h1>
+              </div>
+            </div>
+          </div>
+          <!-- Navegação -->
+          <div class="swiper-button-next text-white"></div>
+          <div class="swiper-button-prev text-white"></div>
+        </div>
+      </header>
+        
+          <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+          <script>
+            var swiper = new Swiper('.swiper-container', {
+              loop: true,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+            });
+          </script>
+        </body>
+        </html>
+        
+    
+      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+      <script>
+        var swiper = new Swiper('.swiper-container', {
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      </script>
+   
+    
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+
+
+    <!-- Seção Quem Somos -->
+    <section id="group" class="py-16 bg-white pt-20">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-blue-500">Quem Somos</h2>
+        <p class="mt-4 text-lg font-semibold">
+          Nós somos a ConversaFácil, uma empresa dedicada a fornecer soluções de
+          chatbot para farmácias. Nosso objetivo é simplificar e melhorar a
+          comunicação com seus clientes.
+        </p>
+        <div class="mt-12 grid md:grid-cols-2 gap-8">
+          <div
+            class="p-6 bg-blue-500 text-white rounded-lg shadow-lg transform hover:scale-105 transition-transform"
+          >
+            <h3 class="text-xl font-bold">Nossa Missão</h3>
+            <p class="mt-2 font-semibold">
+              Facilitar o atendimento e a interação com os clientes de farmácias
+              através de tecnologia de ponta e atendimento personalizado.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-blue-500 text-white rounded-lg shadow-lg transform hover:scale-105 transition-transform"
+          >
+            <h3 class="text-xl font-bold">Nossos Valores</h3>
+            <p class="mt-2 font-semibold">
+              Compromisso com a qualidade, inovação e excelência no atendimento
+              ao cliente são os nossos principais valores.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Produtos -->
+    <section id="products" class="py-16 bg-blue-100 pt-20">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-blue-500">Nossos Produtos</h2>
+        <p class="mt-4 text-lg font-semibold text-black">
+          Escolha o plano que melhor se adapta às suas necessidades.
+        </p>
+        <div class="mt-12 grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Plano Básico -->
+          <div
+            class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform flex flex-col items-center"
+          >
+            <h3 class="text-xl font-semibold mb-2 text-center">Plano Básico</h3>
+            <p class="text-lg font-semibold mb-2 text-center">R$ 15,90 / mês</p>
+            <p class="text-gray-600 mb-4 text-center">
+              Funcionalidades essenciais para pequenas farmácias.
+            </p>
+            <ul class="mb-4 text-gray-600 text-center">
+              <li class="mb-2">Acesso a relatórios básicos</li>
+              <li class="mb-2">Suporte via e-mail</li>
+              <li class="mb-2">Gestão de estoque limitada</li>
+            </ul>
+            <a
+              href="https://api.whatsapp.com/send?phone=558181820893"
+              target="_blank"
+              class="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-500"
+            >
+              Saiba mais
+            </a>
+          </div>
+
+          <!-- Plano Avançado -->
+          <div
+            class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform flex flex-col items-center"
+          >
+            <h3 class="text-xl font-semibold mb-2 text-center">
+              Plano Avançado
+            </h3>
+            <p class="text-lg font-semibold mb-2 text-center">R$ 25,90 / mês</p>
+            <p class="text-gray-600 mb-4 text-center">
+              Soluções completas para farmácias de médio porte.
+            </p>
+            <ul class="mb-4 text-gray-600 text-center">
+              <li class="mb-2">Acesso a relatórios avançados</li>
+              <li class="mb-2">Suporte via chat e e-mail</li>
+              <li class="mb-2">Gestão de estoque completa</li>
+              <li class="mb-2">Integração com sistemas de pagamento</li>
+            </ul>
+            <a
+              href="https://api.whatsapp.com/send?phone=558181820893"
+              target="_blank"
+              class="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-500"
+            >
+              Saiba mais
+            </a>
+          </div>
+
+          <!-- Plano Personalizado -->
+          <div
+            class="p-6 bg-white rounded-lg shadow-lg transform hover:scale-105 transition-transform flex flex-col items-center"
+          >
+            <h3 class="text-xl font-semibold mb-2 text-center">
+              Plano Personalizado
+            </h3>
+            <p class="text-lg font-semibold mb-2 text-center">R$ 35,90 / mês</p>
+            <p class="text-gray-600 mb-4 text-center">
+              Soluções customizadas para grandes farmácias com necessidades
+              específicas.
+            </p>
+            <ul class="mb-4 text-gray-600 text-center">
+              <li class="mb-2">Relatórios personalizados</li>
+              <li class="mb-2">Suporte 24/7 dedicado</li>
+              <li class="mb-2">Consultoria especializada</li>
+              <li class="mb-2">Integração completa com sistemas ERP</li>
+            </ul>
+            <a
+              href="https://api.whatsapp.com/send?phone=558181820893"
+              target="_blank"
+              class="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-500"
+            >
+              Saiba mais
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="py-16 bg-white pt-20">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-blue-500">Conheça Nosso Time</h2>
+        <p class="mt-4 text-lg font-semibold text-black">
+          Estamos aqui para ajudar você a alcançar seus objetivos com nossa
+          expertise e paixão por tecnologia.
+        </p>
+        <div class="mt-12 grid md:grid-cols-3 gap-8">
+          <div
+            class="p-6 bg-white rounded-lg shadow-lg bg-blue-100 hover:bg-blue-500 transition-all"
+          >
+            <img
+              src="assets/pfp-brunno.png"
+              width="20%"
+              class="image-profile"
+              alt=""
+            />
+            <h3 class="text-xl font-semibold">Bruno Hemannoel - CEO</h3>
+            <!-- Adicionei o cargo -->
+            <p class="mt-2 text-gray-600">
+              Conduz a visão e a direção estratégica da empresa, liderando a
+              equipe para alcançar metas ambiciosas e expandir a presença no
+              mercado.
+            </p>
+          </div>
+
+          <div
+            class="p-6 bg-white rounded-lg shadow-lg bg-blue-100 hover:bg-blue-500 transition-all"
+          >
+            <img
+              src="assets/pfp-daniele.png"
+              width="20%"
+              class="image-profile"
+              alt=""
+            />
+            <h3 class="text-xl font-semibold">Daniele Barbosa - CMO</h3>
+            <!-- Adicionei o cargo -->
+            <p class="mt-2 text-gray-600">
+              Lidera as estratégias de marketing e comunicação, focando em
+              expandir a marca e engajar o público através de campanhas
+              criativas e eficazes.
+            </p>
+          </div>
+
+          <div
+            class="p-6 bg-white rounded-lg shadow-lg bg-blue-100 hover:bg-blue-500 transition-all"
+          >
+            <img
+              src="assets/pfp-henrique.png"
+              width="20%"
+              class="image-profile"
+              alt=""
+            />
+            <h3 class="text-xl font-semibold">Henrique Souza - CPO</h3>
+            <!-- Adicionei o cargo -->
+            <p class="mt-2 text-gray-600">
+              Supervisiona o desenvolvimento e a inovação dos produtos,
+              assegurando que atendam às necessidades dos clientes e ao mercado
+              em constante evolução.
+            </p>
+          </div>
+
+          <div
+            class="p-6 bg-white rounded-lg shadow-lg bg-blue-100 hover:bg-blue-500 transition-all"
+          >
+            <img
+              src="assets/pfp-joel.png"
+              width="20%"
+              class="image-profile"
+              alt=""
+            />
+            <h3 class="text-xl font-semibold">Joel Maranhão - CTO</h3>
+            <!-- Adicionei o cargo -->
+            <p class="mt-2 text-gray-600">
+              Responsável pela estratégia tecnológica e pela supervisão do
+              desenvolvimento de sistemas inovadores que impulsionam a
+              eficiência e a escalabilidade da empresa.
+            </p>
+          </div>
+
+          <div
+            class="p-6 bg-white rounded-lg shadow-lg bg-blue-100 hover:bg-blue-500 transition-all"
+          >
+            <img
+              src="assets/pfp-tiago.jpg"
+              width="20%"
+              class="image-profile"
+              alt=""
+            />
+            <h3 class="text-xl font-semibold">Tiago Roxo - COO</h3>
+            <!-- Adicionei o cargo -->
+            <p class="mt-2 text-gray-600">
+              Gerencia as operações diárias da empresa, garantindo que todas as
+              áreas funcionem de forma eficiente e alinhadas aos objetivos
+              estratégicos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Contato -->
+     <!-- Seção Contato -->
+     <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-stretch">
+            <div class="md:w-1/2 w-full flex">
+                <img src="assets/contato.png" alt="Imagem de Contato" class="w-full h-full object-cover rounded-lg shadow-lg">
+            </div>
+            <div class="md:w-1/2 w-full flex">
+                <div class="flex flex-col justify-center bg-blue-100 p-8 rounded-lg shadow-lg w-full">
+                    <h2 class="text-3xl font-bold text-blue-500 text-center">Entre em Contato</h2>
+                    <p class="mt-4 text-lg font-semibold text-black text-center">Estamos aqui para ajudar você com qualquer dúvida ou consulta. Entre em contato e vamos conversar!</p>
+                    <form class="mt-8 w-full">
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                <label for="name" class="block text-left uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Nome</label>
+                                <input id="name" name="name" type="text" placeholder="Seu nome" class="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required>
+                            </div>
+                            <div class="w-full md:w-1/2 px-3">
+                                <label for="email" class="block text-left uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">E-mail</label>
+                                <input id="email" name="email" type="email" placeholder="Seu e-mail" class="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-left uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Mensagem</label>
+                            <textarea id="message" name="message" placeholder="Sua mensagem" class="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-32 resize-none" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 focus:outline-none focus:shadow-outline" onclick="SendMail(event)">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Footer -->
+    <footer class="bg-blue-200 py-4">
+      <div class="container mx-auto px-6 text-center font-bold text-black">
+        <p>&copy;2024ConversaFácil Todos os direitos reservados</p>
+      </div>
+    </footer>
+
+    <script>
+      function sendEmail(event) {
+        event.preventDefault();
+
+        emailjs.sendForm("service_id", "template_id", this).then(
+          (response) => {
+            alert("Mensagem enviada com sucesso!");
+            document.getElementById("contact-form").reset();
+          },
+          (error) => {
+            alert("Erro ao enviar mensagem. Tente novamente mais tarde.");
+          }
+        );
+      }
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  </body>
+</html>
