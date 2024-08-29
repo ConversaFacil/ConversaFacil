@@ -1,7 +1,6 @@
 function SendMail(event) {
   event.preventDefault();
 
-  // Se a validação falhar, interrompe o envio do email
   if (!validateForm()) {
     return;
   }
@@ -44,6 +43,7 @@ function validateForm() {
   const nameError = document.getElementById("nameError");
   const emailError = document.getElementById("emailError");
   const messageError = document.getElementById("messageError");
+  const iconError = document.getElementById("iconError");
 
   let valid = true;
 
@@ -72,6 +72,12 @@ function validateForm() {
   } else {
     messageError.classList.add("hidden");
     messageInput.classList.remove("border-red-600");
+  }
+
+  if (!valid) {
+    iconError.classList.remove("hidden");
+  } else {
+    iconError.classList.add("hidden");
   }
 
   return valid;
