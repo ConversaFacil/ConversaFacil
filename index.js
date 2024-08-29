@@ -1,5 +1,5 @@
 function SendMail(event) {
-  event.preventDefault(); 
+  event.preventDefault();  
 
   let name = document.getElementById("name").value;
   let email = document.getElementById("email").value;
@@ -20,7 +20,10 @@ function SendMail(event) {
     .send("service_vgkpo3s", "template_b8yo8d9", params)
     .then(function (response) {
       alert("Sucesso! Status: " + response.status);
-    })
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+        })
     .catch(function (error) {
       alert("Falha ao enviar o email: " + error);
     });
