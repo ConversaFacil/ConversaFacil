@@ -413,7 +413,6 @@
     </section>
 
     <!-- Seção Contato -->
-    <!-- Seção Contato -->
     <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-stretch">
             <div class="md:w-1/2 w-full flex">
@@ -425,7 +424,7 @@
                     <h2 class="text-3xl font-bold text-blue-500 text-center">Entre em Contato</h2>
                     <p class="mt-4 text-lg font-semibold text-black text-center">Estamos aqui para ajudar você com
                         qualquer dúvida ou consulta. Entre em contato e vamos conversar!</p>
-                    <form class="mt-8 w-full">
+                    <form class="mt-8 w-full" onsubmit="SendMail(event)">
                         <div class="flex flex-wrap -mx-3 mb-6">
                             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                 <label for="name"
@@ -433,6 +432,7 @@
                                 <input id="name" name="name" type="text" placeholder="Seu nome"
                                     class="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                     required>
+                                <small id="nameError" class="text-red-600 text-xs hidden">Por favor, preencha este campo.</small>
                             </div>
                             <div class="w-full md:w-1/2 px-3">
                                 <label for="email"
@@ -440,30 +440,28 @@
                                 <input id="email" name="email" type="email" placeholder="Seu e-mail"
                                     class="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                     required>
-                                    <div class="  rounded-lg ">
-                                        <form>
-                                            <div class="flex items-center space-x-2">
-                                                <input type="checkbox" id="copy" name="subscribe"
-                                                    class="h-3 w-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                                                <label for="subscribe" class="text-xs font-medium text-gray-700">Quero receber cópia</label>
-                                            </div>
-                                        </form>
+                               
+                    
+                                <div class="rounded-lg">
+                                    <div class="flex items-center space-x-2">
+                                        <input type="checkbox" id="copy" name="copy"
+                                            class="h-3 w-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                        <label for="copy" class="text-xs font-medium text-gray-700">Quero receber cópia</label>
+                                        <small id="emailError" class="text-red-600 text-xs hidden">Por favor, preencha este campo.</small>
                                     </div>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="flex items-center space-x-2">
-  
-</div>
-
-
+                    
                         <div class="mb-6">
                             <label for="message"
                                 class="block text-left uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Mensagem</label>
                             <textarea id="message" name="message" placeholder="Sua mensagem"
                                 class="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-32 resize-none"
                                 required></textarea>
+                            <small id="messageError" class="text-red-600 text-xs hidden">Por favor, preencha este campo.</small>
                         </div>
+                    
                         <div class="text-center">
                             <button type="submit"
                                 class="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 focus:outline-none focus:shadow-outline"
