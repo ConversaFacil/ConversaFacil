@@ -9,6 +9,7 @@ function SendMail(event) {
   let email = document.getElementById("email").value;
   let message = document.getElementById("message").value;
   let copy = document.getElementById("copy").checked;
+  
 
   let params = {
     from_name: name,
@@ -73,8 +74,6 @@ function validateForm() {
     messageError.classList.add("hidden");
     messageInput.classList.remove("border-red-600");
   }
-
- 
 
   return valid;
 }
