@@ -74,11 +74,7 @@ function validateForm() {
     messageInput.classList.remove("border-red-600");
   }
 
-  if (!valid) {
-    iconError.classList.remove("hidden");
-  } else {
-    iconError.classList.add("hidden");
-  }
+ 
 
   return valid;
 }
